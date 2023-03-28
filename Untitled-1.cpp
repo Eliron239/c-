@@ -46,6 +46,31 @@ public: // открытые методы и поля класса
     void static showСount() {
         cout << "Общее количество сотрудников: " << count << endl;
     }
+
+    string operator > (Employee employee) {
+        if (salary > employee.salary)
+            return ("True");
+        else
+            return ("False");
+    }
+
+    string operator < (Employee employee) {
+        if (salary < employee.salary)
+            return ("True");
+        else
+            return ("False");
+    }
+
+    string operator == (Employee employee) {
+        if (salary == employee.salary)
+            return ("True");
+        else
+            return ("False");
+    }
+
+    void operator = (Employee employee) {
+        salary = employee.salary;
+    }
 };
 
 void Employee::show() {
@@ -66,31 +91,6 @@ void Employee::addSalary(double p_salary) {
 void Employee::showPrivatFields() {
     cout << "Ф.И.О: " << name << endl;
     cout << "Пол: " << gender << endl;
-}
-
-string Employee operator > (Employee employee) {
-    if (salary > employee.salary)
-        return ("True");
-    else
-        return ("False");
-}
-
-string Employee operator < (Employee employee) {
-    if (salary < employee.salary)
-        return ("True");
-    else
-        return ("False");
-}
-
-string Employee operator == (Employee employee) {
-    if (salary == employee.salary)
-        return ("True");
-    else
-        return ("False");
-}
-
-void Employee operator = (Employee employee) {
-    salary = employee.salary;
 }
 
 int Employee::count = 0;
