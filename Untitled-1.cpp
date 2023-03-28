@@ -68,6 +68,31 @@ void Employee::showPrivatFields() {
     cout << "Пол: " << gender << endl;
 }
 
+string Employee operator > (Employee employee) {
+    if (salary > employee.salary)
+        return ("True");
+    else
+        return ("False");
+}
+
+string Employee operator < (Employee employee) {
+    if (salary < employee.salary)
+        return ("True");
+    else
+        return ("False");
+}
+
+string Employee operator == (Employee employee) {
+    if (salary == employee.salary)
+        return ("True");
+    else
+        return ("False");
+}
+
+void Employee operator = (Employee employee) {
+    salary = employee.salary;
+}
+
 int Employee::count = 0;
 
 int main()
